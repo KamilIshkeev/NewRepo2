@@ -7,12 +7,12 @@ namespace Rental.Models
     {
         [Key]
         public int Id { get; set; }
-        [ForeignKey("User")]
+        //[ForeignKey("User")]
         public int UserId { get; set; }
-        public User User { get; set; }
-        [ForeignKey("Tool")]
+        //public User User { get; set; }
+        //[ForeignKey("Tool")]
         public int ToolId { get; set; }
-        public Tool Tool { get; set; }
+        //public Tool Tool { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public decimal TotalPrice { get; set; }

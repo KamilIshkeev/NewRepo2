@@ -14,7 +14,5 @@ namespace Rental.Models
         [Required]
         public string Password { get; set; }
         public string Role { get; set; }
-        // Навигационное свойство для заказов
-        //public ICollection<Order> Orders { get; set; }
     }
 }

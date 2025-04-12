@@ -47,10 +47,11 @@ namespace Rental.Controllers
 
         // PUT: api/orders/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateOrder(int id, [FromBody] Order order)
+        public async Task<ActionResult<Order>> UpdateOrder(int id, [FromBody] Order order)
         {
             await _orderService.UpdateOrderAsync(id, order);
-            return NoContent();
+            var updatedOrder = await _orderService.GetOrderByIdAsync(id);
+            return Ok(updatedOrder);
         }
 
         // DELETE: api/orders/{id}

@@ -18,17 +18,13 @@ namespace Rental.Services
 
         public async Task<IEnumerable<Order>> GetAllOrdersAsync()
         {
-            return await _context.Order
-                .Include(o => o.User) // Подгрузка связанных данных
-                .Include(o => o.Tool)
+            return await _context.Order 
                 .ToListAsync();
         }
 
         public async Task<Order> GetOrderByIdAsync(int id)
         {
             return await _context.Order
-                .Include(o => o.User)
-                .Include(o => o.Tool)
                 .FirstOrDefaultAsync(o => o.Id == id);
         }
 
